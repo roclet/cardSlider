@@ -1,0 +1,66 @@
+<div>
+  <div [ngStyle]="myStyles.boxSlide">
+    <div [ngStyle]="myStyles.normalSlide" class="card">
+      <div class="pt-sm-image">
+        <img class="card-sm-image" [src]="slides.data[0].imageUrl" />
+      </div>
+      <div class="pt-sm-card-title">
+        <h1>{{ slides.data[0].title }}</h1>
+      </div>
+    </div>
+    <div [ngStyle]="myStyles.normalSlide" class="card">
+      <div class="pt-sm-image">
+        <img class="card-sm-image" [src]="slides.data[1].imageUrl" />
+      </div>
+      <div class="pt-sm-card-title">
+        <h1>{{ slides.data[1].title }}</h1>
+      </div>
+    </div>
+
+    <div [ngStyle]="myStyles.mainSlide" class="card" [@cardGallery]="position">
+      <div class="pt-image">
+        <img class="card-image" [src]="slides.data[2].imageUrl" />
+      </div>
+      <div class="pt-card-title">
+        <h1>{{ slides.data[2].title }}</h1>
+      </div>
+      <div class="btn-start">
+        <a class="card-action">
+          START HERE
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </a>
+      </div>
+    </div>
+
+    <div [ngStyle]="myStyles.normalSlide" class="card">
+      <div class="pt-sm-image">
+        <img class="card-sm-image" [src]="slides.data[3].imageUrl" />
+      </div>
+      <div class="pt-sm-card-title">
+        <h1>{{ slides.data[3].title }}</h1>
+      </div>
+    </div>
+    <div [ngStyle]="myStyles.normalSlide" class="card">
+      <div class="pt-sm-image">
+        <img class="card-sm-image" [src]="slides.data[4].imageUrl" />
+      </div>
+      <div class="pt-sm-card-title">
+        <h1>{{ slides.data[4].title }}</h1>
+      </div>
+    </div>
+  </div>
+  <div [ngStyle]="myStyles.navSlide">
+    <div [ngStyle]="myStyles.midleBox">
+      <button
+        [ngStyle]="myStyles.btn"
+        (click)="backSlide('move')"
+        class="mr-10"
+      >
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+      <button [ngStyle]="myStyles.btn" (click)="nextSlide('move')" class="ml-5">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
