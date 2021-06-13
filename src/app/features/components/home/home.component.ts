@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
         imageUrl: 'http://www.bilingo.co.za/mtn-digital/assets/small-card.png',
       },
       {
-        title: 'Mobile Internet',
+        title: 'Add a Phone-line',
         imageUrl: 'http://www.bilingo.co.za/mtn-digital/assets/small-card.png',
       },
       {
@@ -23,11 +23,11 @@ export class HomeComponent implements OnInit {
         imageUrl: 'http://www.bilingo.co.za/mtn-digital/assets/small-card.png',
       },
       {
-        title: 'Home Internet',
+        title: 'Upgrade',
         imageUrl: 'http://www.bilingo.co.za/mtn-digital/assets/small-card.png',
       },
       {
-        title: 'Home Internet',
+        title: 'Mobile Internet',
         imageUrl: 'http://www.bilingo.co.za/mtn-digital/assets/small-card.png',
       },
     ],
@@ -49,14 +49,11 @@ export class HomeComponent implements OnInit {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      // border: '2px solid black',
-      // marginTop: '-100px'
     },
     midleBox: {
       display: 'flex',
       justifyContent: 'space-between',
       flexDirection: 'row',
-      // border: '2px solid red',
     },
     boxSlide: {
       display: 'flex',
@@ -76,13 +73,10 @@ export class HomeComponent implements OnInit {
       maxWidth: '456px',
       justifyContent: 'center',
       alignItems: 'center',
-      // display: 'flex',
       margin: '10px',
       transition: 'all .8s ease-in-out',
       transformOrigin: 'left top',
       backgroundColor: '#fff',
-      //transform: scaleY(0),
-      //transform: scaleY(0),
     },
     normalSlide: {
       borderColor: 'rgba(0,0,0,.125)',
@@ -95,7 +89,6 @@ export class HomeComponent implements OnInit {
       maxWidth: '216px',
       justifyContent: 'center',
       alignItems: 'center',
-      // display: 'flex',
       margin: '10px',
       backgroundColor: '#fff',
     },
@@ -109,7 +102,7 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
- // Next card
+  // Next card
   nextSlide() {
     let totalElement = this.slides.data.length;
     let index = totalElement - 1;
@@ -122,7 +115,7 @@ export class HomeComponent implements OnInit {
     }
     this.slides.data = tmp;
   }
-// Previous card
+  // Previous card
   backSlide() {
     let totalElement = this.slides.data.length;
     let index = totalElement - 1;
