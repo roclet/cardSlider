@@ -12,22 +12,24 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './card-slider.component.html',
   styleUrls: ['./card-slider.component.scss'],
   animations: [
-    trigger('cardGallery', [
+    trigger('openClose', [
+      // ...
       state(
-        'move',
+        'open',
         style({
-          // opacity: 1
-          transform: 'translateX(-100%)',
+          width: '200px',
+          opacity: 1,
         })
       ),
       state(
-        'stop',
+        'closed',
         style({
-          transform: 'translateX(-100%)',
+          width: '100px',
+          opacity: 0.8,
         })
       ),
-      transition('move => stop', animate('300ms', style({ opacity: 1 }))),
-      transition('stop => move', animate('300ms', style({ opacity: 0 }))),
+      transition('open => closed', [style({ opacity: 1 }), animate('1s')]),
+      transition('closed => open', [style({ opacity: 1 }), animate('0.5s')]),
     ]),
   ],
 })
@@ -36,18 +38,16 @@ export class CardSliderComponent implements OnInit {
   @Input() myStyles: any;
   @Output() nextArrows$: EventEmitter<string> = new EventEmitter();
   @Output() backArrows$: EventEmitter<string> = new EventEmitter();
-  position: string = '';
-
+  isOpen = true;
   constructor() {}
-
   ngOnInit(): void {}
 
-  backSlide(newposition: string) {
-    this.position = newposition;
+  backSlide() {
+    this.isOpen = !this.isOpen;
     this.backArrows$.emit();
   }
-  nextSlide(newposition: string) {
-    this.position = newposition;
+  nextSlide() {
+    this.isOpen = !this.isOpen;
     this.nextArrows$.emit();
   }
 }

@@ -7,9 +7,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { MatSliderModule } from '@angular/material/slider';
 const modules = [
   MatButtonModule,
   MatFormFieldModule,
@@ -22,7 +23,8 @@ const modules = [
   MatSelectModule,
   MatToolbarModule,
   MatToolbarModule,
-  MatListModule
+  MatListModule,
+  MatSliderModule,
 ];
 @NgModule({
   imports: [modules],

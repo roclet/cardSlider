@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { flattenDiagnosticMessageText } from 'typescript';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   slides = {
-    Animal: '',
+    isHovered: false,
     imageUrl: null,
     data: [
       {
@@ -114,6 +115,10 @@ export class HomeComponent implements OnInit {
       tmp.push(el);
     }
     this.slides.data = tmp;
+    this.slides.isHovered = true;
+    setTimeout(() => {
+      this.slides.isHovered = false;
+    }, 500);
   }
   // Previous card
   backSlide() {
@@ -127,5 +132,9 @@ export class HomeComponent implements OnInit {
     }
     tmp.push(firstElement);
     this.slides.data = tmp;
+    this.slides.isHovered = true;
+    setTimeout(() => {
+      this.slides.isHovered = false;
+    }, 300);
   }
 }

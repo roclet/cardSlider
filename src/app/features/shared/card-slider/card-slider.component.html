@@ -1,5 +1,5 @@
 <div>
-  <div [ngStyle]="myStyles.boxSlide">
+  <div [ngStyle]="myStyles.boxSlide" [@openClose]="isOpen ? 'open' : 'closed'">
     <div [ngStyle]="myStyles.normalSlide" class="card">
       <div class="pt-sm-image">
         <img class="card-sm-image" [src]="slides.data[0].imageUrl" />
@@ -16,8 +16,7 @@
         <h1>{{ slides.data[1].title }}</h1>
       </div>
     </div>
-
-    <div [ngStyle]="myStyles.mainSlide" class="card" [@cardGallery]="position">
+    <div [ngStyle]="myStyles.mainSlide" class="card">
       <div class="pt-image">
         <img class="card-image" [src]="slides.data[2].imageUrl" />
       </div>
@@ -51,14 +50,10 @@
   </div>
   <div [ngStyle]="myStyles.navSlide">
     <div [ngStyle]="myStyles.midleBox">
-      <button
-        [ngStyle]="myStyles.btn"
-        (click)="backSlide('move')"
-        class="mr-10"
-      >
+      <button [ngStyle]="myStyles.btn" (click)="backSlide()" class="mr-10">
         <mat-icon>keyboard_arrow_right</mat-icon>
       </button>
-      <button [ngStyle]="myStyles.btn" (click)="nextSlide('move')" class="ml-5">
+      <button [ngStyle]="myStyles.btn" (click)="nextSlide()" class="ml-5">
         <mat-icon>keyboard_arrow_left</mat-icon>
       </button>
     </div>
